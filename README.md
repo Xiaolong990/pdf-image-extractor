@@ -103,6 +103,46 @@ PDF文件名_图片序号.扩展名
    # document2_001.jpeg
    ```
 
+## 示例：demo.pdf图片提取
+
+本仓库包含一个示例PDF文件(`demo.pdf`)及其提取的图片。以下是如何重现此示例：
+
+1. 克隆仓库并安装依赖：
+   ```bash
+   git clone https://github.com/Xiaolong990/pdf-image-extractor.git
+   cd pdf-image-extractor
+   pip install -r requirements.txt
+   ```
+
+2. 提取demo.pdf中的图片：
+   ```bash
+   python pdf_image_extractor.py demo.pdf -o demo_images
+   ```
+
+3. 查看提取结果：
+   ```bash
+   ls demo_images/
+   # demo_001.png
+   # demo_002.jpg
+   # ...
+   ```
+
+**提取结果统计**：
+- PDF页数：23页
+- 提取图片总数：26张
+- 图片格式：JPEG (16张), PNG (10张)
+- 输出目录：[demo_images/](demo_images/)
+
+**部分图片预览**：
+| 图片 | 尺寸 | 大小 |
+|------|------|------|
+| demo_002.jpg | 643×1258 | 54 KB |
+| demo_017.jpg | 2167×1365 | 303 KB |
+| demo_018.jpg | 1990×2717 | 699 KB |
+| demo_022.png | 2168×2555 | 751 KB |
+
+> 注意：demo.pdf文件未包含在仓库中（避免版权问题），但您可以使用自己的PDF文件测试。
+
 ## 技术细节
 
 - 使用 **PyMuPDF (fitz)** 库解析PDF文件并提取嵌入的图片
